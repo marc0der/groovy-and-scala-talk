@@ -246,6 +246,11 @@ total = 'x';
 					</section>
 					<section>
 						<h2>Scala</h2>
+						<br>
+						<img width="600px" data-src="img/precision_tools.jpg"/>
+					</section>
+					<section>
+						<h2>Scala</h2>
 						<ul>
 							<li class="fragment">JVM Platform Language</li>
 							<li class="fragment">Functional</li>
@@ -288,21 +293,40 @@ ResponseEntity&lt;SuccessResponse&gt; response =
 val response = ResponseEntity(SuccessResponse(m.toString))
 							</code>
 						</pre>
-						<p class="fragment highlight-blue">left side of assignment infers type of right side</p>
-						<p class="fragment highlight-blue">compiler checked</p>
-						<p class="fragment highlight-blue">feels like dynamic language!</p>
+						<p>left side of assignment infers type of right side</p>
 					</section>
 					<section>
 						<h2>Scala Language Features</h2>
 						<h3>Implicit Conversion</h3>
 						<pre>
 							<code data-trim>
+scala> implicit def intToString(x: Int) = x.toString
+
+scala> val y = 1 + "y"
+
+y: String = 1y
+							</code>
+						</pre>
+						<p>types can be converted implicitly</p>
+					</section>
+					<section>
+						<h2>Scala Language Features</h2>
+						<h3>Implicit Paramaters</h3>
+						<pre>
+							<code data-trim>
+scala> def whosit(x: String)(implicit y: String) = s"$x's your $y"
+
+scala> implicit val y = "Uncle"
+
+scala> println(whosit("Bob"))
+
+Bob's your Uncle
 
 							</code>
 						</pre>
-						<p class="fragment highlight-blue">types can be converted implicitly</p>
-						<p class="fragment highlight-blue">compiler checked</p>
-						<p class="fragment highlight-blue"></p>
+						<p class="fragment highlight-blue">implicit parameters need not be provided explicitly</p>
+						<p class="fragment highlight-blue">string interpolation</p>
+						<p class="fragment highlight-blue">concise method body</p>
 					</section>
 				</section>
 			</div>
