@@ -262,6 +262,18 @@ total = 'x';
 						</ul>
 					</section>
 					<section>
+						<h2>Scala</h2>
+						<h3>some drawbacks</h3>
+						<ul>
+							<li class="fragment">slow compilation: type <strong>inference</strong> and <strong>implicits</strong></li>
+							<li class="fragment">endless scrutenisation over <strong>code</strong></li>
+							<li class="fragment">horrendous tooling support in <strong>IDEA</strong></li>
+							<li class="fragment">highly functional code can be difficult to <strong>Unit Test</strong></li>
+							<li class="fragment">very difficult to <strong>Debug</strong> in an IDE</li>
+							<li class="fragment"><strong>SBT</strong>. Worst. Build. Tool. Ever.</li>
+						</ul>
+					</section>
+					<section>
 						<h2>Scala Language Features</h2>
 						<h3>Case Classes</h3>
 						<pre>
@@ -276,9 +288,10 @@ Person(1,John,Appleseed)
 							</code>
 						</pre>
 						<p class="fragment highlight-blue">Complete pojo in 1 line!</p>
-						<p class="fragment highlight-blue"><code>new</code> keyword is obsolete</p>
 						<p class="fragment highlight-blue">Constructor part of class declaration</p>
-						<p class="fragment highlight-blue">Generates equals, hashcode and toString methods</p>
+						<p class="fragment highlight-blue">Immutable fields</p>
+						<p class="fragment highlight-blue"><code>new</code> keyword is obsolete</p>
+						<p class="fragment highlight-blue">Generates getters, equals, hashcode and toString methods</p>
 					</section>
 					<section>
 						<h2>Scala Language Features</h2>
@@ -328,6 +341,46 @@ Bob's your Uncle
 						<p class="fragment highlight-blue">string interpolation</p>
 						<p class="fragment highlight-blue">concise method body</p>
 					</section>
+					<section>
+						<h2>Scala Language Features</h2>
+						<h3>Options and Pattern Matchers</h3>
+						<pre>
+							<code data-trim>
+val person: Option[String] = ???
+
+def message(p: Option[String]) = p match {
+	case Some("John") => "John has won!"
+	case Some(y) => s"$y wins"
+	case None => "Nobody is the winner :-("
+}
+
+message(person)
+
+							</code>
+						</pre>
+						<p class="fragment highlight-blue">Optional types baked into the language</p>
+						<p class="fragment highlight-blue">Pattern matching</p>
+					</section>
+					<section>
+						<h2>Scala Language Features</h2>
+						<ul>
+							<li class="fragment">for comprehensions</li>
+							<li class="fragment"><code>apply()</code> and <code>unapply()</code> methods</li>
+							<li class="fragment">Futures for Reactive programming</li>
+							<li class="fragment">Rich type system</li>
+							<li class="fragment">No statics, just Singletons</li>
+							<li class="fragment">Functional collections API: <code>map()</code>, <code>flatMap()</code>, <code>filter()</code> etc.</li>
+							<li class="fragment">cool frameworks: Akka, Play, Lift</li>
+							<li class="fragment">pretty neat testing with ScalaTest</li>
+							<li class="fragment">and many many more...</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Summary</h2>
+					<ul>
+						<li></li>
+					</ul>
 				</section>
 			</div>
 
