@@ -144,7 +144,7 @@
 						<p>Declared values bound to a <strong>type</strong> and optionally an <strong>object</strong>.</p>
 						<h4>Java</h4>
 						<pre>
-							<code data-trim>BigDecimal balance = 39.42;</code>
+							<code data-trim>BigDecimal balance = new BigDecimal("39.42");</code>
 						</pre>
 						<h4>Scala</h4>
 						<pre>
@@ -325,7 +325,7 @@ Person(1,John,Appleseed)
 							<code data-trim>
 //Java
 ResponseEntity&lt;SuccessResponse&gt; response = 
-	new ResponseEntity(new SuccessResponse(m.toString()))
+	new ResponseEntity&lt;&gt;(new SuccessResponse(m.toString()))
 
 //Scala
 val response = ResponseEntity(SuccessResponse(m.toString))
