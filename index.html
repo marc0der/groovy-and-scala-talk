@@ -90,8 +90,8 @@
 						<li>Statically Typed Languages</li>
 						<li>Groovy and Scala</li>
 						<li>Scala Features</li>
-						<li>Kata</li>
-                        <li>Real World Demo</li>
+						<!--li>Kata</li-->
+                        <li>Demo</li>
 						<li>Q&amp;A / Discussion</li>
 					</ul>
 					<br><br><br>
@@ -299,122 +299,41 @@ total = 'x';
 							<li class="fragment"><strong>SBT</strong>. Worst. Build. Tool. Ever.</li>
 						</ul>
 					</section>
-					<section>
-						<h2>Scala Language Features</h2>
-						<h3>Case Classes</h3>
-						<pre>
-							<code data-trim>
-scala> case class Person(id: Long, firstName: String, lastName: String)
-
-scala> val p = Person(1, "John", "Appleseed")
-
-scala> println(p)
-
-Person(1,John,Appleseed)
-							</code>
-						</pre>
-						<p class="fragment highlight-blue">Complete pojo in 1 line!</p>
-						<p class="fragment highlight-blue">Constructor part of class declaration</p>
-						<p class="fragment highlight-blue">Immutable fields</p>
-						<p class="fragment highlight-blue"><code>new</code> keyword is obsolete</p>
-						<p class="fragment highlight-blue">Generates getters, equals, hashcode and toString methods</p>
-					</section>
-					<section>
-						<h2>Scala Language Features</h2>
-						<h3>Type Inference</h3>
-						<pre>
-							<code data-trim>
-//Java
-ResponseEntity&lt;SuccessResponse&gt; response = 
-	new ResponseEntity&lt;&gt;(new SuccessResponse(m.toString()))
-
-//Scala
-val response = ResponseEntity(SuccessResponse(m.toString))
-							</code>
-						</pre>
-						<p>left side of assignment infers type of right side</p>
-					</section>
-					<section>
-						<h2>Scala Language Features</h2>
-						<h3>Implicit Conversion</h3>
-						<pre>
-							<code data-trim>
-scala> implicit def intToString(x: Int) = x.toString
-
-scala> val y = 1 + "y"
-
-y: String = 1y
-							</code>
-						</pre>
-						<p>types can be converted implicitly</p>
-					</section>
-					<section>
-						<h2>Scala Language Features</h2>
-						<h3>Implicit Paramaters</h3>
-						<pre>
-							<code data-trim>
-scala> def whosit(x: String)(implicit y: String) = s"$x's your $y"
-
-scala> implicit val y = "Uncle"
-
-scala> println(whosit("Bob"))
-
-Bob's your Uncle
-
-							</code>
-						</pre>
-						<p class="fragment highlight-blue">implicit parameters need not be provided explicitly</p>
-						<p class="fragment highlight-blue">string interpolation</p>
-						<p class="fragment highlight-blue">concise method body</p>
-					</section>
-					<section>
-						<h2>Scala Language Features</h2>
-						<h3>Options and Pattern Matchers</h3>
-						<pre>
-							<code data-trim>
-val person: Option[String] = ???
-
-def message(p: Option[String]) = p match {
-	case Some("John") => "John has won!"
-	case Some(y) => s"$y wins"
-	case None => "Nobody is the winner :-("
-}
-
-message(person)
-
-							</code>
-						</pre>
-						<p class="fragment highlight-blue">Optional types baked into the language</p>
-						<p class="fragment highlight-blue">Pattern matching</p>
-					</section>
-					<section>
-						<h2>Scala Language Features</h2>
-						<ul>
-							<li class="fragment"><code>for</code> comprehensions</li>
-							<li class="fragment"><code>apply()</code> and <code>unapply()</code> methods</li>
-							<li class="fragment"><code>Future</code>s for Reactive programming</li>
-							<li class="fragment">Rich type system</li>
-                            <li class="fragment">No statics, just Singleton <code>object</code>s</li>
-                            <li class="fragment">Monads everywhere! with <code>map()</code>, <code>flatmap()</code>, <code>lift()</code> etc, etc, etc.</li>
-							<li class="fragment">Powerful Collections API.</li>
-							<li class="fragment">cool frameworks: Akka, Play, Spray</li>
-							<li class="fragment">pretty neat testing with ScalaTest</li>
-							<li class="fragment">and much much more...</li>
-						</ul>
-					</section>
 				</section>
-				<section>
-					<h1>Kata Time!</h1>
-					<p>Write some code for a contiguous range of numbers:</p>
-					<ul>
-						<li>the numbers</li>
-						<li>'fizz' for numbers that are multiples of 3</li>
-						<li>'buzz' for numbers that are multiples of 5</li>
-						<li>'fizzbuzz' for numbers that are multiples of 15</li>
-					</ul>
-					<p>Runing for range 1-20 renders the following output:</p>
-					<code>1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz 16 17 fizz 19 buzz</code>
-				</section>
+                <section>
+                    <section>
+                        <h1>Codez!</h1>
+                        <p>The core of a CQRS Event Sourced app</p>
+                    </section>
+					<section>
+						<h2>CAP Theorem</h2>
+						<br>
+						<img width="600px" data-src="img/cap.png"/>
+					</section>
+                    <section>
+                        <h2>CQRS</h2>
+                        <ul>
+                            <li class="fragment">Command Query Responsibility Segregation</li>
+                            <li class="fragment">Separate Write &amp; Read Apps</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Event Sourcing</h2>
+                        <ul>
+                            <li class="fragment">Supplements CQRS</li>
+                            <li class="fragment">Event driven</li>
+                            <li class="fragment">Expensive processing offlined</li>
+                            <li class="fragment">Eventually consistency</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Picture like a 1000 words...</h2>
+                        <ul>
+                            <br>
+                            <img width="600px" data-src="img/cqrs-es.png"/>
+                        </ul>
+                    </section>
+                </section>
 				<section>
 					<h2>Summary</h2>
 					<ul>
